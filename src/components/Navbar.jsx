@@ -59,12 +59,12 @@ export default function Navbar() {
       >
         {[
           { name: "Home", path: "/" },
-          { name: "About", path: "/about" },
+          { name: "Dr. Saravana", path: "/about" },
           { name: "Research", path: "/research" },
           { name: "Publications", path: "/publications" },
           
           
-          { name: "Teams", path: "/students" },
+          { name: "Team", path: "/students" },
           { name: "Gallery", path: "/gallery" },
           { name: "Laboratory", path: "/laboratory" },
           { name: "Contact", path: "/contact" },
