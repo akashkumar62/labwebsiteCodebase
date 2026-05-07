@@ -150,11 +150,11 @@ export default function ContactInfo() {
           </p>
           <p className="mt-4 text-gray-400">
             <span className="block font-bold text-white">Email</span>
-            abc.chy@iitbhu.ac.in
+            saravana.chy@itbhu.ac.in
           </p>
           <p className="mt-4 text-gray-400">
             <span className="block font-bold text-white">Phone</span>
-            +91 12345678
+            +91 9994209755
           </p>
           {/* Map Section */}
           <div className="mt-6">
