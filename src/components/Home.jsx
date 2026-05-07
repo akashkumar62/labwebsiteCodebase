@@ -15,7 +15,7 @@ export default function Home() {
       .then((data) => setHeroSliderImages(data))
       .catch((err) => console.error("Error fetching hero slider:", err));
   
-    fetch("https://raw.githubusercontent.com/akashkumar62/labwebsite/main/gallery/images.json")
+    fetch("https://raw.githubusercontent.com/akashkumar62/labwebsite/main/researchSlider.json")
       .then((res) => res.json())
       .then((data) => setResearchSliderImages(data))
       .catch((err) => console.error("Error fetching research slider:", err));
