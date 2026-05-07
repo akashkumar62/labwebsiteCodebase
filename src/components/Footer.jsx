@@ -50,11 +50,11 @@ export default function Footer() {
           <h3 className="text-white font-semibold">Contact Info</h3>
           <p className="text-sm">📍 Department of Chemistry,IIT BHU(Varanasi)</p>
           <p>
-            <a href="mailto:abcd.chy@iitbhu.ac.in" 
-              className="text-blue-400 hover:underline text-md">📧abcd.chy@iitbhu.ac.in</a>
+            <a href="mailto:saravana.chy@itbhu.ac.in" 
+              className="text-blue-400 hover:underline text-md">📧saravana.chy@itbhu.ac.in</a>
           </p>
          
-          <p className="text-sm">📞 +91 234566655</p>
+          <p className="text-sm">📞 +91 9994209755</p>
         </div>
 
         {/* Social Media Links */}
@@ -85,7 +85,7 @@ export default function Footer() {
 
       {/* Footer Copyright */}
       <div className="text-center text-sm mt-6 border-t border-gray-700 pt-4">
-        © 2025 OMSC Lab. All rights reserved. (Developed by Akash)
+        © 2025 OMSC Lab. All rights reserved. 
       </div>
     </footer>
   );
