@@ -74,8 +74,8 @@ export default function Home() {
         The Organometallics and Sustainable Catalysis Lab
         </h1>
        <p className="mx-1 md:ml-10 md:mr-8 text-xl md:text-xl">
-          We focus on the development of <strong className="text-emerald-600">novel ligands</strong> and <strong className="text-emerald-600">base metal complexes</strong>, and
-           sustainable synthetic methods that enable the <strong className="text-emerald-600">valorization of biomass</strong>.
+         Our group focuses on the development of <strong className="text-emerald-600">novel ligands</strong>, <strong className="text-emerald-600">base metal complexes</strong>,
+      and <strong className="text-emerald-600">sustainable synthetic methods</strong> that enable the valorization of biomass.
         </p>
     </div>
 
