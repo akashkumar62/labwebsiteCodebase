@@ -32,17 +32,13 @@ export default function About() {
                 Biomass Conversions, Green Chemistry
               </p>
 
-              <p className="font-semibold font-montserrat mt-2">
-                Phone: +91-12345678
-              </p>
-
               <p className="font-semibold font-montserrat">
                 Email:{" "}
                 <a
                   href="mailto:saravana.chy@itbhu.ac.in"
                   className="text-blue-600 underline"
                 >
-                  abcd.chy@iitbhu.ac.in
+                  saravana.chy@iitbhu.ac.in
                 </a>
               </p>
 
