@@ -2,11 +2,7 @@ import React from "react";
 
 export default function About() {
   return (
-    <div className="bg-white text-black font-montserrat mx-auto py-16 px-4 space-y-10">
-
-    <h3 className="text-4xl font-bold font-montserrat text-center">
-          About Me
-    </h3>
+    <div className="bg-white text-black font-montserrat mx-auto px-4 space-y-10">
 
       {/* PROFESSOR SECTION (UNCHANGED CONTENT) */}
       <div className="max-w-7xl  mx-auto py-12 px-6 text-black">
