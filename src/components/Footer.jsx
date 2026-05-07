@@ -53,8 +53,6 @@ export default function Footer() {
             <a href="mailto:saravana.chy@itbhu.ac.in" 
               className="text-blue-400 hover:underline text-md">📧saravana.chy@itbhu.ac.in</a>
           </p>
-         
-          <p className="text-sm">📞 +91 9994209755</p>
         </div>
 
         {/* Social Media Links */}
