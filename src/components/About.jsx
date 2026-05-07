@@ -2,64 +2,11 @@ import React from "react";
 
 export default function About() {
   return (
-    <div className="bg-white text-black font-sans mx-auto px-6 pb-6 pt-0 space-y-10">
+    <div className="bg-white text-black font-montserrat mx-auto py-16 px-4 space-y-10">
 
-      {/* LAB HERO FIRST WITH BACKGROUND */}
-<div
-  className="relative -mx-6 bg-cover bg-center bg-no-repeat py-20"
-  style={{
-    backgroundImage: "url('/bg2.jpg')" // put your image in public/
-  }}
->
-  {/* OVERLAY */}
-  <div className="absolute inset-10"></div>
-
-  {/* CONTENT */}
-  <div className="relative max-w-5xl mx-auto space-y-6 px-4  text-white">
-    
-    <h2 className="text-3xl font-bold text-center font-montserrat">
-      Advancing Sustainable Chemistry through Innovation
-    </h2>
-
-    <p className="text-lg text-center leading-relaxed">
-      Our group focuses on the development of novel ligands, base metal complexes,
-      and sustainable synthetic methods that enable the valorization of biomass.
-      Our main motive is the synthesis of bio-based chemicals, pharmaceuticals,
-      polymers, etc. using inexpensive ligands and metals as catalysts aligned with
-      sustainability, green chemistry, and circular economy.
-    </p>
-
-
-      {/* RESEARCH LAB */}
-      <section>
-        <h2 className="text-2xl font-semibold font-montserrat">Research Lab</h2>
-        <p>
-          Our lab focuses on groundbreaking research in chemistry and biotechnology,
-          aiming to develop sustainable solutions for industrial and academic advancements.
-        </p>
-      </section>
-
-      {/* MISSION */}
-      <section>
-        <h2 className="text-2xl font-semibold font-montserrat">Mission</h2>
-        <p>
-          To push the boundaries of scientific innovation while fostering a collaborative
-          and inclusive research environment.
-        </p>
-      </section>
-
-      {/* VISION */}
-      <section>
-        <h2 className="text-2xl font-semibold font-montserrat">Vision</h2>
-        <p>
-          Our vision is to transform chemical synthesis by replacing fossil fuel dependence with 
-          sustainable, biomass-based alternatives. Through the development of novel ligands, 
-          base metal catalysts, and green synthetic methods, we aim to enable a more 
-          climate-conscious and sustainable chemical industry.
-        </p>
-      </section>
-      </div>
-    </div>
+    <h3 className="text-4xl font-bold font-montserrat text-center">
+          About Me
+    </h3>
 
       {/* PROFESSOR SECTION (UNCHANGED CONTENT) */}
       <div className="max-w-7xl  mx-auto py-12 px-6 text-black">
@@ -81,20 +28,6 @@ export default function About() {
                 IIT (BHU) Varanasi
               </p>
 
-              <p className="font-semibold font-montserrat">
-                Postdoctoral Researcher:
-              </p>
-              <p>
-                Technische Universität Berlin, University of Groningen
-              </p>
-
-              <p className="font-semibold font-montserrat mt-2">
-                Research Associate:
-              </p>
-              <p>
-                Syngene International Limited
-              </p>
-
               <p className="font-semibold font-montserrat mt-2">
                 Area of Interest:
               </p>
@@ -110,7 +43,7 @@ export default function About() {
               <p className="font-semibold font-montserrat">
                 Email:{" "}
                 <a
-                  href="mailto:abcd.chy@iitbhu.ac.in"
+                  href="mailto:saravana.chy@itbhu.ac.in"
                   className="text-blue-600 underline"
                 >
                   abcd.chy@iitbhu.ac.in
@@ -142,14 +75,13 @@ export default function About() {
 <section className="mt-8 px-4">
   {/* HEADER */}
   <h2 className="text-2xl font-bold font-montserrat mb-4 border-b pb-2">
-    Personal Experience
-  </h2>
-  
+  Professional Experience
+</h2>
 
-  {/* CONTENT */}
-  <section>
+{/* CONTENT */}
+<section>
   <div className="space-y-3 pl-4">
-    
+
     <div className="flex justify-between items-start">
       <div>
         <div className="font-semibold text-base">
@@ -215,34 +147,6 @@ export default function About() {
     <div className="flex justify-between items-start">
       <div>
         <div className="font-semibold text-base">
-          Professor
-        </div>
-        <div className="text-gray-600 text-sm">
-          Indian Institute of Technology (BHU)
-        </div>
-      </div>
-      <div className="italic text-gray-500 text-sm whitespace-nowrap">
-        2015 – Present
-      </div>
-    </div>
-
-    <div className="flex justify-between items-start">
-      <div>
-        <div className="font-semibold text-base">
-          Postdoctoral Research
-        </div>
-        <div className="text-gray-600 text-sm">
-          University of Warwick
-        </div>
-      </div>
-      <div className="italic text-gray-500 text-sm whitespace-nowrap">
-        2012 – 2015
-      </div>
-    </div>
-
-    <div className="flex justify-between items-start">
-      <div>
-        <div className="font-semibold text-base">
           Research Associate
         </div>
         <div className="text-gray-600 text-sm">
@@ -251,20 +155,6 @@ export default function About() {
       </div>
       <div className="italic text-gray-500 text-sm whitespace-nowrap">
         Feb 2010 – Aug 2012
-      </div>
-    </div>
-
-    <div className="flex justify-between items-start">
-      <div>
-        <div className="font-semibold text-base">
-          Research Associate
-        </div>
-        <div className="text-gray-600 text-sm">
-          XYZ Institute
-        </div>
-      </div>
-      <div className="italic text-gray-500 text-sm whitespace-nowrap">
-        2009 – 2012
       </div>
     </div>
 
@@ -283,9 +173,8 @@ export default function About() {
     </div>
 
   </div>
-  </section>
 </section>
-
+</section>
       <section className="mt-8 px-4">
   {/* HEADER */}
   <h2 className="text-2xl font-bold font-montserrat mb-4 border-b pb-2">
@@ -294,130 +183,80 @@ export default function About() {
 
   {/* CONTENT */}
   <ul className="divide-y list-disc pl-5 space-y-2">
-    <li className="flex justify-between py-2">
-      <div>
-        <span className="font-semibold">
-          Beijing Youth Talent Funding Program
-        </span>
-        <span className="text-gray-600 text-sm ml-2">
-          – Visiting program for young foreign scholars
-        </span>
-      </div>
-      <div className="italic text-gray-500 text-sm">
-        {/* No year for this one */}
-      </div>
-    </li>
 
-    <li className="flex justify-between py-2">
-      <div className="font-semibold">
-        Ramanujan Fellowship
-      </div>
-      <div className="italic text-gray-500 text-sm">
-        2021
-      </div>
-    </li>
+  <li className="flex justify-between py-2">
+    <div className="font-semibold">
+      Beijing youth talent funding program - Visiting program for young foreign scholars
+    </div>
+    <div className="italic text-gray-500 text-sm">
+      2024
+    </div>
+  </li>
 
-    <li className="flex justify-between py-2">
-      <div className="font-semibold">
-        Alexander Von Humboldt Fellowship
-      </div>
-      <div className="italic text-gray-500 text-sm">
-        Aug 2019 – July 2021
-      </div>
-    </li>
+  <li className="flex justify-between py-2">
+    <div className="font-semibold">
+      Ramanujan Fellowship
+    </div>
+    <div className="italic text-gray-500 text-sm">
+      2021
+    </div>
+  </li>
 
-    <li className="flex justify-between py-2">
-      <div className="font-semibold">
-        Selected for 70th Lindau Nobel Laureate Meeting
-      </div>
-      <div className="italic text-gray-500 text-sm">
-        2020
-      </div>
-    </li>
+  <li className="flex justify-between py-2">
+    <div className="font-semibold">
+      Alexander Von Humboldt Fellowship
+    </div>
+    <div className="italic text-gray-500 text-sm">
+      Aug 2019 – July 2021
+    </div>
+  </li>
 
-    <li className="flex justify-between py-2">
-      <div>
-        <span className="font-semibold">
-          Ph.D. Fellowship
-        </span>
-        <span className="text-gray-600 text-sm ml-2">
-          – Leibniz-Institut für Katalyse, Rostock, Germany
-        </span>
-      </div>
-      <div className="italic text-gray-500 text-sm">
-        Feb 2015 – July 2016
-      </div>
-    </li>
+  <li className="flex justify-between py-2">
+    <div className="font-semibold">
+      Selected to participate in the 70th Lindau Nobel Laureate Meeting
+    </div>
+    <div className="italic text-gray-500 text-sm">
+      2020
+    </div>
+  </li>
 
-    <li className="flex justify-between py-2">
-      <div>
-        <span className="font-semibold">
-          Ph.D. Fellowship (ARED)
-        </span>
-        <span className="text-gray-600 text-sm ml-2">
-          – Conseil Régional de Bretagne, Rennes, France
-        </span>
-      </div>
-      <div className="italic text-gray-500 text-sm">
-        Oct 2013 – Jan 2015
-      </div>
-    </li>
+  <li className="flex justify-between py-2">
+    <div className="font-semibold">
+      Ph.D. Fellowship by Leibniz-Institut für Katalyse, Rostock, Germany
+    </div>
+    <div className="italic text-gray-500 text-sm">
+      Feb 2015 – July 2016
+    </div>
+  </li>
 
-    <li className="flex justify-between py-2">
-      <div>
-        <span className="font-semibold">
-          Charpak Scholarship of Excellence
-        </span>
-        <span className="text-gray-600 text-sm ml-2">
-          – University of Rennes1, France
-        </span>
-      </div>
-      <div className="italic text-gray-500 text-sm">
-        Sep 2012 – June 2013
-      </div>
-    </li>
+  <li className="flex justify-between py-2">
+    <div className="font-semibold">
+      Ph.D. Fellowship (ARED) by Conseil Régional de Bretagne, Rennes, France
+    </div>
+    <div className="italic text-gray-500 text-sm">
+      Oct 2013 – Jan 2015
+    </div>
+  </li>
 
-    <li className="flex justify-between py-2">
-      <div>
-        <span className="font-semibold">
-          The Tamilnadu Educational Trust
-        </span>
-        <span className="text-gray-600 text-sm ml-2">
-          – Fresh Scholarship for Master Studies
-        </span>
-      </div>
-      <div className="italic text-gray-500 text-sm">
-        2007 – 2008
-      </div>
-    </li>
+  <li className="flex justify-between py-2">
+    <div className="font-semibold">
+      Charpak Scholarship of Excellence for International Master Program in the University of Rennes1, France
+    </div>
+    <div className="italic text-gray-500 text-sm">
+      Sep 2012 – June 2013
+    </div>
+  </li>
 
-    <li className="flex justify-between py-2">
-      <div className="font-semibold">
-        Best Researcher Award, XYZ Organization
-      </div>
-      <div className="italic text-gray-500 text-sm">
-        2021
-      </div>
-    </li>
+  <li className="flex justify-between py-2">
+    <div className="font-semibold">
+      The Tamilnadu Educational Trust- Fresh Scholarship for Master Studies
+    </div>
+    <div className="italic text-gray-500 text-sm">
+      2007–2008
+    </div>
+  </li>
 
-    <li className="flex justify-between py-2">
-      <div className="font-semibold">
-        National Science Fellowship
-      </div>
-      <div className="italic text-gray-500 text-sm">
-        2018
-      </div>
-    </li>
-
-    <li className="flex justify-between py-2">
-      <div className="font-semibold">
-        Innovative Chemist Award
-      </div>
-      <div className="italic text-gray-500 text-sm">
-        2015
-      </div>
-    </li>
-  </ul>
+</ul>
 </section>
 
 
