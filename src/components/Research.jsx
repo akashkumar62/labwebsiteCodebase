@@ -37,16 +37,6 @@ export default function Research() {
           Our Research Focus
         </h2>
 
-    <p className="text-lg text-center leading-relaxed font-bold">
-      Our group focuses on the development of novel ligands, base metal complexes,
-      and sustainable synthetic methods that enable the valorization of biomass.
-      Our main motive is the synthesis of bio-based chemicals, pharmaceuticals,
-      polymers, etc. using inexpensive ligands and metals as catalysts aligned with
-      sustainability, green chemistry, and circular economy.
-    </p>
-
-
-
         {/* Highlighted Research Sections */}
         <div className="space-y-20 mt-10">
           {highlightSections.map((section, index) => (
