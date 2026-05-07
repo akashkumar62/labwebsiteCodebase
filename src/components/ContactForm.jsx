@@ -152,10 +152,6 @@ export default function ContactInfo() {
             <span className="block font-bold text-white">Email</span>
             saravana.chy@itbhu.ac.in
           </p>
-          <p className="mt-4 text-gray-400">
-            <span className="block font-bold text-white">Phone</span>
-            +91 9994209755
-          </p>
           {/* Map Section */}
           <div className="mt-6">
             <iframe
