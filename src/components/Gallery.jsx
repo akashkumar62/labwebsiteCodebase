@@ -4,7 +4,7 @@ export default function Gallery() {
   const [visibleCount, setVisibleCount] = useState(6);
 
   useEffect(() => {
-    fetch("https://raw.githubusercontent.com/akashkumar62/labwebsite/main/gallery/images.json")
+    fetch("https://raw.githubusercontent.com/akashkumar62/labwebsite/refs/heads/main/gallery/images.json")
       .then((response) => response.json())
       .then((data) => setImages(data))
       .catch((error) => console.error("Error fetching gallery data:", error));
