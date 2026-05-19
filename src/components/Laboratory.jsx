@@ -45,7 +45,7 @@ export default function Laboratory() {
         <>
           {/* Main Laboratory Equipment */}
           <div className="grid md:grid-cols-2 gap-6">
-            {labData.equipment?.map((item, index) => (
+            {labData?.map((item, index) => (
               <div key={index} className="bg-gray-100 text-black p-6 rounded-lg shadow-md">
                 {item.image && (
                   <img 
