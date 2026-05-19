@@ -59,22 +59,16 @@ export default function Footer() {
         <div>
           <h3 className="text-white font-semibold">Connect With Us</h3>
           <div className="flex space-x-3 mt-2">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">
+            <a href="https://www.linkedin.com/in/saravanakumar-elangovan-9408a271/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">
               <FontAwesomeIcon icon={faLinkedin} size="lg" />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-600">
-              <FontAwesomeIcon icon={faTwitter} size="lg" />
-            </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-200 hover:text-white">
-              <FontAwesomeIcon icon={faFacebook} size="lg" />
-            </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-white">
+            <a href="https://scholar.google.com/citations?user=fQg3EjcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-white">
               <FontAwesomeIcon icon={faGoogleScholar} size="lg" />
             </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-red-400 hover:text-white">
+            <a href="https://orcid.org/0000-0003-2694-9989" target="_blank" rel="noopener noreferrer" className="text-red-400 hover:text-white">
               <FontAwesomeIcon icon={faOrcid} size="lg" />
             </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
+            <a href="https://www.researchgate.net/profile/Saravanakumar-Elangovan" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
               <FontAwesomeIcon icon={faResearchgate} size="lg" />
             </a>
           </div>
