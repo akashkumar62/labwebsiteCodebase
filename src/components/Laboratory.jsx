@@ -51,7 +51,7 @@ export default function Laboratory() {
                   <img 
                     src={item.image} 
                     alt={item.title} 
-                    className="w-full h-48 object-cover rounded-lg mb-4"
+                    className="w-full h-48 object-contain rounded-lg mb-4"
                   />
                 )}
                 <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
