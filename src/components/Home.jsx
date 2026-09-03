@@ -71,7 +71,7 @@ export default function Home() {
         style={{ backgroundImage: "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzGUHgPpE8IVJytFxgCi8mXngZ3mxXfs81bw&s')" }}
       >
        <h1 className="font-montserrat mx-1 md:ml-10 md:mr-8 text-3xl md:text-4xl font-bold mb-2 tracking-tight">
-        The Organometallics and Sustainable Catalysis Lab
+        Welcome to the Organometallics and Sustainable Catalysis Lab!
         </h1>
        <p className="mx-1 md:ml-10 md:mr-8 text-xl md:text-xl">
          Our group focuses on the development of <strong className="text-emerald-600">novel ligands</strong>, <strong className="text-emerald-600">base metal complexes</strong>,
