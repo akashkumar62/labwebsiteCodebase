@@ -23,10 +23,22 @@ export default function Footer() {
   return (
     <footer className="font-sans bg-gray-800 text-gray-400 p-8">
       <div className="mx-auto flex flex-col md:flex-row justify-between items-start md:items-center">
-        <div className="max-w-52 mb-6 md:mb-0">
-          <h2 className="text-white text-lg font-bold">OMSC Lab</h2>
-          <p className="text-sm">
-           Advancing on the development of novel ligands and base metal complexes, and sustainable synthetic methods that enable the valorization of biomass.
+        <div className="max-w-xs mb-6 md:mb-0">
+          <div className="flex items-center space-x-3 mb-3">
+            <div className="bg-white p-1 rounded-lg shadow-sm">
+              <img
+                src="/omsc_logo.png"
+                alt="OMSC Lab"
+                className="h-10 w-auto object-contain"
+              />
+            </div>
+            <div>
+              <h2 className="text-white text-lg font-bold font-montserrat">OMSC Lab</h2>
+              <span className="text-xs text-slate-400">IIT (BHU) Varanasi</span>
+            </div>
+          </div>
+          <p className="text-sm text-slate-300 leading-relaxed">
+            Advancing the development of novel ligands, base metal complexes, and sustainable synthetic methods enabling biomass valorization.
           </p>
         </div>
 

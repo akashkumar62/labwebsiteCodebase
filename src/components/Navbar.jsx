@@ -41,15 +41,24 @@ export default function Navbar() {
 
   return (
     <nav className="bg-gray-950 text-white py-4 px-6 flex justify-between items-center fixed top-0 w-full z-50 shadow-md">
-      <div className="flex items-center space-x-4">
-        <Link to="/">
-          <img
-            src="https://raw.githubusercontent.com/akashkumar62/labwebsite/main/gallery/logo.peg.png"
-            alt="Logo"
-            className="h-10 cursor-pointer ml-4 lg:ml-20"
-          />
+      <div className="flex items-center space-x-3">
+        <Link to="/" className="flex items-center space-x-3 group">
+          <div className="bg-white p-1 rounded-xl shadow-md transition-transform duration-200 group-hover:scale-105 flex items-center justify-center">
+            <img
+              src="/omsc_logo.png"
+              alt="OMSC Lab Logo"
+              className="h-10 sm:h-11 w-auto object-contain"
+            />
+          </div>
+          <div className="hidden sm:flex flex-col text-left">
+            <span className="font-montserrat font-bold text-base sm:text-lg leading-tight text-white group-hover:text-emerald-400 transition-colors">
+              OMSC Lab
+            </span>
+            <span className="text-[10px] text-slate-400 tracking-wider uppercase font-sans">
+              IIT (BHU) Varanasi
+            </span>
+          </div>
         </Link>
-        <h1 className="font-mono text-xl font-bold hidden lg:block">OMSC Lab</h1>
       </div>
 
       {/* Menu Items */}
