@@ -36,10 +36,10 @@ export default function Publications() {
             className="rounded-3xl bg-gradient-to-br from-gray-100 to-white shadow-md p-8"
           >
             <div className="md:flex md:items-start md:space-x-8">
-              
+
               {/* TEXT SECTION */}
               <div className="md:w-1/2 mb-6 md:mb-0">
-                
+
                 {/* TITLE */}
                 <div
                   className="text-xl font-bold mb-2"
@@ -140,29 +140,29 @@ export default function Publications() {
   return (
     <section id="publications" className="bg-white text-black py-16 px-4">
       <div className="max-w-7xl mx-auto">
-      <h2 className="text-4xl font-bold font-montserrat text-center mb-12">Publications</h2>
-      <div className="flex flex-col gap-8">
-        
-        {/* IIT BHU Publications */}
-        <div>
-          <h3 className="text-3xl font-semibold mb-4">
-            PUBLICATIONS FROM IIT (BHU)
-          </h3>
-          <div className="space-y-20">
-            {renderPublications(otherPubs, true)}
-          </div>
-        </div>
+        <h2 className="text-4xl font-bold font-montserrat text-center mb-12">Publications</h2>
+        <div className="flex flex-col gap-8">
 
-        {/* Other Publications */}
-        <div>
-          <h3 className="text-xl font-semibold mb-4 border-b pb-2">
-            IMPORTANT PUBLICATIONS FROM POST-DOC AND Ph.D.
-          </h3>
-          <div className="space-y-4">
-            {renderPublications(teachingPubs, false)}
+          {/* IIT BHU Publications */}
+          <div>
+            <h3 className="text-3xl font-semibold mb-4">
+              PUBLICATIONS FROM IIT (BHU)
+            </h3>
+            <div className="space-y-20">
+              {renderPublications(otherPubs, true)}
+            </div>
+          </div>
+
+          {/* Other Publications */}
+          <div>
+            <h3 className="text-xl font-semibold mb-4 border-b pb-2">
+              IMPORTANT PUBLICATIONS FROM POST-DOC AND Ph.D.
+            </h3>
+            <div className="space-y-4">
+              {renderPublications(teachingPubs, false)}
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </section>
   );

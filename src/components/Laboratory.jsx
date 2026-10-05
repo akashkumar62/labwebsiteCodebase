@@ -48,9 +48,9 @@ export default function Laboratory() {
             {labData?.map((item, index) => (
               <div key={index} className="bg-gray-100 text-black p-6 rounded-lg shadow-md">
                 {item.image && (
-                  <img 
-                    src={item.image} 
-                    alt={item.title} 
+                  <img
+                    src={item.image}
+                    alt={item.title}
                     className="w-full h-48 object-contain rounded-lg mb-4"
                   />
                 )}
