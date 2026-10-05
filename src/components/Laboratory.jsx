@@ -14,7 +14,20 @@ export default function Laboratory() {
         );
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const data = await response.json();
-        setLabData(data);
+        const updatedData = Array.isArray(data)
+          ? data
+              .filter((item) => !item.title?.includes("Manual"))
+              .map((item) => {
+                if (item.title?.includes("UV-Vis Spectrophotometer")) {
+                  return {
+                    ...item,
+                    title: "UV-Chamber"
+                  };
+                }
+                return item;
+              })
+          : data;
+        setLabData(updatedData);
       } catch (error) {
         console.error("Error fetching laboratory data:", error);
         setError(error.message);
@@ -45,19 +58,28 @@ export default function Laboratory() {
         <>
           {/* Main Laboratory Equipment */}
           <div className="grid md:grid-cols-2 gap-6">
-            {labData?.map((item, index) => (
-              <div key={index} className="bg-gray-100 text-black p-6 rounded-lg shadow-md">
-                {item.image && (
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-48 object-contain rounded-lg mb-4"
-                  />
-                )}
-                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                <p className="text-sm text-gray-600">{item.description}</p>
-              </div>
-            ))}
+            {labData
+              ?.filter((item) => !item.title?.includes("Manual"))
+              ?.map((item, index) => {
+                const title = item.title?.includes("UV-Vis Spectrophotometer") ? "UV-Chamber" : item.title;
+                return (
+                  <div key={index} className="bg-gray-100 text-black p-6 rounded-lg shadow-md flex flex-col justify-between">
+                    <div>
+                      {item.image && (
+                        <div className="w-full h-56 bg-white rounded-lg p-3 mb-4 flex items-center justify-center border border-gray-200">
+                          <img
+                            src={item.image}
+                            alt={title}
+                            className="max-h-full max-w-full object-contain"
+                          />
+                        </div>
+                      )}
+                      <h3 className="text-xl font-semibold mb-2">{title}</h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">{item.description}</p>
+                    </div>
+                  </div>
+                );
+              })}
           </div>
         </>
       ) : (
