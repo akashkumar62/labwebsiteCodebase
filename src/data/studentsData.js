@@ -96,6 +96,18 @@ export const initialStudents = [
     email: "msanantha.srikrishnan.chy22@itbhu.ac.in"
   },
   {
+    name: "Shivam Yadav",
+    role: "IDD (B.Tech+M.Tech)",
+    category: "Undergraduate",
+    focus: "Functionalisation of Lignin-derived molecules",
+    year: "2022 – Present",
+    image: "/teams/shivam.jpeg",
+    orcid: "",
+    scholar: "",
+    linkedin: "https://www.linkedin.com/in/shivam-yadav-552992294/",
+    email: ""
+  },
+  {
     name: "Upasana Dubey",
     role: "Alumni",
     category: "Alumni",

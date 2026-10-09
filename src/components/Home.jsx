@@ -256,7 +256,11 @@ export default function Home() {
                   : researchSliderImages[researchIndex]?.src || "/omsc_logo.png"
               }
               alt="research slider"
-              className="mx-auto object-contain h-[260px] md:h-[350px] w-auto max-w-[95%] rounded-2xl shadow-xl bg-white p-4 animate-fade-scale transition-all duration-500 hover:scale-105"
+              className={`mx-auto object-contain h-[260px] md:h-[350px] w-auto max-w-[95%] rounded-2xl shadow-xl animate-fade-scale transition-all duration-500 hover:scale-105 ${
+                researchSliderImages[researchIndex]?.src?.toLowerCase().includes("logo") || !researchSliderImages[researchIndex]?.src
+                  ? "p-4"
+                  : "bg-white p-4"
+              }`}
             />
           </div>
 

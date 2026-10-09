@@ -43,11 +43,11 @@ export default function Navbar() {
     <nav className="bg-gray-950 text-white py-4 px-6 flex justify-between items-center fixed top-0 w-full z-50 shadow-md">
       <div className="flex items-center space-x-3">
         <Link to="/" className="flex items-center space-x-3 group">
-          <div className="bg-white p-1 rounded-xl shadow-md transition-transform duration-200 group-hover:scale-105 flex items-center justify-center">
+          <div className="transition-transform duration-200 group-hover:scale-105 flex items-center justify-center">
             <img
               src="/omsc_logo.png"
               alt="OMSC Lab Logo"
-              className="h-10 sm:h-11 w-auto object-contain"
+              className="h-10 sm:h-12 w-auto object-contain"
             />
           </div>
           <div className="hidden sm:flex flex-col text-left">

@@ -25,11 +25,11 @@ export default function Footer() {
       <div className="mx-auto flex flex-col md:flex-row justify-between items-start md:items-center">
         <div className="max-w-xs mb-6 md:mb-0">
           <div className="flex items-center space-x-3 mb-3">
-            <div className="bg-white p-1 rounded-lg shadow-sm">
+            <div className="flex items-center justify-center">
               <img
                 src="/omsc_logo.png"
                 alt="OMSC Lab"
-                className="h-10 w-auto object-contain"
+                className="h-11 w-auto object-contain"
               />
             </div>
             <div>

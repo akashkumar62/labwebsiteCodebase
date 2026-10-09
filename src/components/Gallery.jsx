@@ -34,7 +34,7 @@ export default function Gallery() {
               src={finalSrc}
               alt={isLogo ? "OMSC Lab Logo" : `Gallery Image ${index + 1}`}
               className={`w-full h-auto object-cover rounded-xl shadow-sm ${
-                isLogo ? "bg-white p-3 border border-gray-200" : ""
+                isLogo ? "p-3" : ""
               }`}
             />
           );
