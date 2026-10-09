@@ -18,23 +18,29 @@ export default function Students() {
       })
       .then((remoteData) => {
         if (Array.isArray(remoteData) && remoteData.length > 0) {
+          const localMap = new Map(
+            initialStudents.map((s) => [s.name?.toLowerCase().trim(), s])
+          );
+
           const normalized = remoteData.map((item) => {
             const role = item.role?.toLowerCase() || "";
-            const name = item.name?.toLowerCase() || "";
+            const cat = item.category?.toLowerCase() || "";
+            const name = item.name?.toLowerCase().trim() || "";
+            const localStudent = localMap.get(name);
 
             if (role.includes("alumni") || cat.includes("alumni") || name.includes("upasana") || name.includes("upashna") || name.includes("himanshu")) {
-              return { ...item, category: "Alumni", role: "Alumni" };
+              return { ...item, image: localStudent?.image || item.image, category: "Alumni", role: "Alumni" };
             }
             if (role.includes("phd") || cat.includes("phd")) {
-              return { ...item, role: "PhD Scholar", category: "PhD" };
+              return { ...item, image: localStudent?.image || item.image, role: "PhD Scholar", category: "PhD" };
             }
-            if (role.includes("undergrad") || role.includes("b.tech") || cat.includes("undergrad")) {
-              return { ...item, category: "Undergraduate" };
+            if (role.includes("undergrad") || role.includes("b.tech") || role.includes("idd") || cat.includes("undergrad")) {
+              return { ...item, image: localStudent?.image || item.image, category: "Undergraduate" };
             }
-            if (role.includes("post") || role.includes("master") || cat.includes("post")) {
-              return { ...item, category: "Post Graduate" };
+            if (role.includes("post") || role.includes("master") || role.includes("m.sc") || cat.includes("post")) {
+              return { ...item, image: localStudent?.image || item.image, category: "Post Graduate" };
             }
-            return { ...item, category: "Alumni" };
+            return { ...item, image: localStudent?.image || item.image, category: "Alumni" };
           });
 
           const remoteNames = new Set(normalized.map((s) => s.name?.toLowerCase().trim()));
