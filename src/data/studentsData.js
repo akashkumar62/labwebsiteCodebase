@@ -100,12 +100,12 @@ export const initialStudents = [
     role: "IDD (B.Tech+M.Tech)",
     category: "Undergraduate",
     focus: "Functionalisation of Lignin-derived molecules",
-    year: "2022 – Present",
+    year: "2023 – Present",
     image: "/teams/shivam.jpeg",
     orcid: "",
     scholar: "",
     linkedin: "https://www.linkedin.com/in/shivam-yadav-552992294/",
-    email: ""
+    email: "shivam.yadav.chy23@itbhu.ac.in"
   },
   {
     name: "Upasana Dubey",
