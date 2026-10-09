@@ -30,6 +30,9 @@ export default function Publications() {
 
   const renderPublications = (list, withImages = false) =>
     list.map((pub, idx) => {
+      const pubNumber = list.length - idx;
+      const cleanTitle = pub.title ? pub.title.trim().replace(/^\d+\.\s*/, "") : "";
+
       if (withImages) {
         return (
           <div
@@ -45,7 +48,10 @@ export default function Publications() {
                     className="text-xl font-bold mb-2 group-hover:text-blue-700 transition-colors"
                     style={{ fontFamily: "Montserrat, sans-serif" }}
                   >
-                    {pub.title}
+                    <span className="text-blue-600 font-extrabold mr-2">
+                      {pubNumber}.
+                    </span>
+                    {cleanTitle}
                   </div>
 
                   {/* AUTHORS */}
@@ -83,14 +89,14 @@ export default function Publications() {
                       {pub.images.map((img, imgIdx) => (
                         <div
                           key={imgIdx}
-                          onClick={() => setSelectedFigure({ src: img, title: pub.title, journal: pub.journal })}
+                          onClick={() => setSelectedFigure({ src: img, title: `${pubNumber}. ${cleanTitle}`, journal: pub.journal })}
                           className="h-60 sm:h-64 w-full flex flex-col items-center justify-between p-3 bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg hover:border-blue-400 transition-all cursor-pointer group/fig"
                           title="Click to enlarge graphical abstract"
                         >
                           <div className="w-full h-48 flex items-center justify-center overflow-hidden">
                             <img
                               src={img}
-                              alt={`publication-${idx + 1}-${imgIdx + 1}`}
+                              alt={`publication-${pubNumber}-${imgIdx + 1}`}
                               className="max-h-full max-w-full object-contain transform group-hover/fig:scale-105 transition-transform duration-300"
                               loading="lazy"
                             />
@@ -103,14 +109,14 @@ export default function Publications() {
                     </div>
                   ) : (
                     <div
-                      onClick={() => setSelectedFigure({ src: pub.images, title: pub.title, journal: pub.journal })}
+                      onClick={() => setSelectedFigure({ src: pub.images, title: `${pubNumber}. ${cleanTitle}`, journal: pub.journal })}
                       className="h-60 sm:h-72 w-full flex flex-col items-center justify-between p-3 bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg hover:border-blue-400 transition-all cursor-pointer group/fig"
                       title="Click to enlarge graphical abstract"
                     >
                       <div className="w-full h-52 sm:h-60 flex items-center justify-center overflow-hidden">
                         <img
                           src={pub.images}
-                          alt={`publication-${idx + 1}`}
+                          alt={`publication-${pubNumber}`}
                           className="max-h-full max-w-full object-contain transform group-hover/fig:scale-105 transition-transform duration-300"
                           loading="lazy"
                         />
