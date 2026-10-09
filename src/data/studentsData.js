@@ -60,8 +60,32 @@ export const initialStudents = [
     email: "mdzahidhussain.rs.chy25@itbhu.ac.in"
   },
   {
+    name: "Post Graduate Scholar",
+    role: "Post Graduate Student (M.Sc.)",
+    category: "Post Graduate",
+    focus: "Homogeneous catalysis and organometallic synthesis",
+    year: "2025 – Present",
+    image: "",
+    orcid: "",
+    scholar: "",
+    linkedin: "",
+    email: "student.pg@itbhu.ac.in"
+  },
+  {
+    name: "Undergraduate Researcher",
+    role: "Undergraduate Student (B.Tech)",
+    category: "Undergraduate",
+    focus: "Base metal catalysis and ligand design project",
+    year: "2025 – Present",
+    image: "",
+    orcid: "",
+    scholar: "",
+    linkedin: "",
+    email: "student.ug@itbhu.ac.in"
+  },
+  {
     name: "Upasana Dubey",
-    role: "Alumni (M.Sc.)",
+    role: "Alumni",
     category: "Alumni",
     focus: "Formation of C-Se bond using transition metal catalysts",
     year: "2024 – 2025",
@@ -73,7 +97,7 @@ export const initialStudents = [
   },
   {
     name: "Himanshu",
-    role: "Alumni (M.Sc.)",
+    role: "Alumni",
     category: "Alumni",
     focus: "3D Transition metal catalysed C-C coupling",
     year: "2023 – 2024",

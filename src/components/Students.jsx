@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faGraduationCap, faIdBadge, faUserGraduate, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faGraduationCap, faIdBadge } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
 import { initialStudents } from "../data/studentsData";
 
 export default function Students() {
   const [students, setStudents] = useState(initialStudents);
-  const [filter, setFilter] = useState("All");
+  const [filter, setFilter] = useState("PhD");
   const [imageErrors, setImageErrors] = useState({});
 
   useEffect(() => {
@@ -18,31 +18,30 @@ export default function Students() {
       })
       .then((remoteData) => {
         if (Array.isArray(remoteData) && remoteData.length > 0) {
-          // Normalize remote data: ensure former Masters members are moved to Alumni
           const normalized = remoteData.map((item) => {
-            const isFormerMaster =
-              item.role?.toLowerCase().includes("master") ||
-              item.name?.toLowerCase().includes("upasana") ||
-              item.name?.toLowerCase().includes("himanshu");
+            const role = item.role?.toLowerCase() || "";
+            const name = item.name?.toLowerCase() || "";
 
-            if (isFormerMaster) {
-              return {
-                ...item,
-                role: item.name?.toLowerCase().includes("upasana") || item.name?.toLowerCase().includes("himanshu") 
-                  ? "Alumni (M.Sc.)" 
-                  : "Alumni",
-                category: "Alumni"
-              };
+            if (role.includes("alumni") || cat.includes("alumni") || name.includes("upasana") || name.includes("upashna") || name.includes("himanshu")) {
+              return { ...item, category: "Alumni", role: "Alumni" };
             }
-
-            const isPhd = item.role?.toLowerCase().includes("phd");
-            return {
-              ...item,
-              role: isPhd ? "PhD Scholar" : item.role,
-              category: isPhd ? "PhD" : "Alumni"
-            };
+            if (role.includes("phd") || cat.includes("phd")) {
+              return { ...item, role: "PhD Scholar", category: "PhD" };
+            }
+            if (role.includes("undergrad") || role.includes("b.tech") || cat.includes("undergrad")) {
+              return { ...item, category: "Undergraduate" };
+            }
+            if (role.includes("post") || role.includes("master") || cat.includes("post")) {
+              return { ...item, category: "Post Graduate" };
+            }
+            return { ...item, category: "Alumni" };
           });
-          setStudents(normalized);
+
+          const remoteNames = new Set(normalized.map((s) => s.name?.toLowerCase().trim()));
+          const preserved = initialStudents.filter(
+            (s) => !remoteNames.has(s.name?.toLowerCase().trim())
+          );
+          setStudents([...normalized, ...preserved]);
         }
       })
       .catch((err) => {
@@ -62,21 +61,31 @@ export default function Students() {
     return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
   };
 
-  // Masters is kept deliberately empty per requirement
+  const isUpasanaOrHimanshu = (s) => {
+    const name = s.name?.toLowerCase() || "";
+    return name.includes("upasana") || name.includes("upashna") || name.includes("himanshu");
+  };
+
+  const isPhd = (s) => !isUpasanaOrHimanshu(s) && (s.category === "PhD" || s.role?.toLowerCase().includes("phd")) && !s.role?.toLowerCase().includes("alumni");
+  const isUg = (s) => !isUpasanaOrHimanshu(s) && (s.category === "Undergraduate" || s.role?.toLowerCase().includes("undergraduate") || s.role?.toLowerCase().includes("b.tech"));
+  const isPg = (s) => !isUpasanaOrHimanshu(s) && (s.category === "Post Graduate" || s.role?.toLowerCase().includes("post graduate") || s.role?.toLowerCase().includes("master")) && !s.role?.toLowerCase().includes("alumni");
+  const isAlumniMember = (s) => isUpasanaOrHimanshu(s) || s.category === "Alumni" || s.role?.toLowerCase().includes("alumni");
+
   const filteredStudents =
-    filter === "All"
-      ? students
-      : filter === "PhD"
-      ? students.filter((s) => s.category === "PhD" || s.role?.toLowerCase().includes("phd"))
-      : filter === "Masters"
-      ? students.filter((s) => s.category === "Masters" || (s.role?.toLowerCase().includes("master") && !s.role?.toLowerCase().includes("alumni")))
+    filter === "PhD"
+      ? students.filter(isPhd)
+      : filter === "Undergraduate"
+      ? students.filter(isUg)
+      : filter === "Post Graduate"
+      ? students.filter(isPg)
       : filter === "Alumni"
-      ? students.filter((s) => s.category === "Alumni" || s.role?.toLowerCase().includes("alumni"))
+      ? students.filter(isAlumniMember)
       : students;
 
-  const phdCount = students.filter((s) => s.category === "PhD" || s.role?.toLowerCase().includes("phd")).length;
-  const mastersCount = students.filter((s) => s.category === "Masters" || (s.role?.toLowerCase().includes("master") && !s.role?.toLowerCase().includes("alumni"))).length;
-  const alumniCount = students.filter((s) => s.category === "Alumni" || s.role?.toLowerCase().includes("alumni")).length;
+  const phdCount = students.filter(isPhd).length;
+  const ugCount = students.filter(isUg).length;
+  const pgCount = students.filter(isPg).length;
+  const alumniCount = students.filter(isAlumniMember).length;
 
   return (
     <section id="team" className="bg-slate-50 text-slate-800 py-16 px-4 sm:px-6 lg:px-8 min-h-screen">
@@ -98,22 +107,6 @@ export default function Students() {
         {/* Filter Navigation Tabs */}
         <div className="flex justify-center flex-wrap gap-2.5 sm:gap-3 mb-12">
           <button
-            onClick={() => setFilter("All")}
-            className={`px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 flex items-center gap-2 ${
-              filter === "All"
-                ? "bg-emerald-700 text-white font-semibold shadow-md shadow-emerald-700/20"
-                : "bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 hover:text-slate-900 shadow-sm"
-            }`}
-          >
-            <span>All Members</span>
-            <span className={`text-xs px-2 py-0.5 rounded-full ${
-              filter === "All" ? "bg-white/20 text-white" : "bg-slate-100 text-slate-600"
-            }`}>
-              {students.length}
-            </span>
-          </button>
-
-          <button
             onClick={() => setFilter("PhD")}
             className={`px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 flex items-center gap-2 ${
               filter === "PhD"
@@ -130,18 +123,34 @@ export default function Students() {
           </button>
 
           <button
-            onClick={() => setFilter("Masters")}
+            onClick={() => setFilter("Undergraduate")}
             className={`px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 flex items-center gap-2 ${
-              filter === "Masters"
+              filter === "Undergraduate"
                 ? "bg-emerald-700 text-white font-semibold shadow-md shadow-emerald-700/20"
                 : "bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 hover:text-slate-900 shadow-sm"
             }`}
           >
-            <span>Masters Students</span>
+            <span>Undergraduate</span>
             <span className={`text-xs px-2 py-0.5 rounded-full ${
-              filter === "Masters" ? "bg-white/20 text-white" : "bg-slate-100 text-slate-600"
+              filter === "Undergraduate" ? "bg-white/20 text-white" : "bg-slate-100 text-slate-600"
             }`}>
-              {mastersCount}
+              {ugCount}
+            </span>
+          </button>
+
+          <button
+            onClick={() => setFilter("Post Graduate")}
+            className={`px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 flex items-center gap-2 ${
+              filter === "Post Graduate"
+                ? "bg-emerald-700 text-white font-semibold shadow-md shadow-emerald-700/20"
+                : "bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 hover:text-slate-900 shadow-sm"
+            }`}
+          >
+            <span>Post Graduate</span>
+            <span className={`text-xs px-2 py-0.5 rounded-full ${
+              filter === "Post Graduate" ? "bg-white/20 text-white" : "bg-slate-100 text-slate-600"
+            }`}>
+              {pgCount}
             </span>
           </button>
 
@@ -161,36 +170,6 @@ export default function Students() {
             </span>
           </button>
         </div>
-
-        {/* Empty State for Masters Category */}
-        {filter === "Masters" && filteredStudents.length === 0 && (
-          <div className="max-w-2xl mx-auto my-12 bg-white border border-slate-200/90 rounded-3xl p-10 text-center shadow-lg">
-            <div className="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center justify-center mx-auto mb-5 text-2xl">
-              <FontAwesomeIcon icon={faUserGraduate} />
-            </div>
-            <h3 className="text-2xl font-bold text-slate-900 font-montserrat">
-              No Current Master's Students
-            </h3>
-            <p className="mt-3 text-slate-600 text-sm leading-relaxed max-w-lg mx-auto">
-              All previous master's thesis scholars have successfully defended and graduated! Their thesis work is archived in our <button onClick={() => setFilter("Alumni")} className="text-emerald-700 font-semibold underline underline-offset-2 hover:text-emerald-800">Alumni section</button>.
-            </p>
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button
-                onClick={() => setFilter("Alumni")}
-                className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-medium text-sm transition-colors border border-slate-300"
-              >
-                View Alumni Directory
-              </button>
-              <Link
-                to="/contact"
-                className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-sm transition-all shadow-md shadow-emerald-700/20 inline-flex items-center justify-center gap-2"
-              >
-                <FontAwesomeIcon icon={faPaperPlane} className="text-xs" />
-                <span>Inquire for Master's Projects</span>
-              </Link>
-            </div>
-          </div>
-        )}
 
         {/* Members Grid */}
         {filteredStudents.length > 0 && (
