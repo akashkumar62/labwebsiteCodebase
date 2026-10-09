@@ -67,7 +67,7 @@ export default function Students() {
   };
 
   const isPhd = (s) => !isUpasanaOrHimanshu(s) && (s.category === "PhD" || s.role?.toLowerCase().includes("phd")) && !s.role?.toLowerCase().includes("alumni");
-  const isUg = (s) => !isUpasanaOrHimanshu(s) && (s.category === "Undergraduate" || s.role?.toLowerCase().includes("undergraduate") || s.role?.toLowerCase().includes("b.tech"));
+  const isUg = (s) => !isUpasanaOrHimanshu(s) && (s.category === "Undergraduate" || s.role?.toLowerCase().includes("undergraduate") || s.role?.toLowerCase().includes("b.tech") || s.role?.toLowerCase().includes("idd"));
   const isPg = (s) => !isUpasanaOrHimanshu(s) && (s.category === "Post Graduate" || s.role?.toLowerCase().includes("post graduate") || s.role?.toLowerCase().includes("master")) && !s.role?.toLowerCase().includes("alumni");
   const isAlumniMember = (s) => isUpasanaOrHimanshu(s) || s.category === "Alumni" || s.role?.toLowerCase().includes("alumni");
 

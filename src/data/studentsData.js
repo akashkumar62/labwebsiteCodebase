@@ -72,16 +72,16 @@ export const initialStudents = [
     email: "student.pg@itbhu.ac.in"
   },
   {
-    name: "Undergraduate Researcher",
-    role: "Undergraduate Student (B.Tech)",
+    name: "M.S. Anantha Sri Krishnan",
+    role: "IDD (B.Tech+M.Tech) 5th Year",
     category: "Undergraduate",
-    focus: "Base metal catalysis and ligand design project",
-    year: "2025 – Present",
-    image: "",
+    focus: "Waste-to-Wealth Conversion of Karuvellam Tree (Prosopis juliflora) Bark: Phytochemical Profiling and Extraction of Valuable Bio-Chemicals",
+    year: "2022 – Present",
+    image: "/teams/anantha.jpeg",
     orcid: "",
     scholar: "",
-    linkedin: "",
-    email: "student.ug@itbhu.ac.in"
+    linkedin: "https://www.linkedin.com/in/anantha-sri-krishnan-m-s-3b3473209?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    email: "msanantha.srikrishnan.chy22@itbhu.ac.in"
   },
   {
     name: "Upasana Dubey",
