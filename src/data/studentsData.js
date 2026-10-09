@@ -60,16 +60,16 @@ export const initialStudents = [
     email: "mdzahidhussain.rs.chy25@itbhu.ac.in"
   },
   {
-    name: "Post Graduate Scholar",
-    role: "Post Graduate Student (M.Sc.)",
+    name: "Harsh Kanaujiya",
+    role: "M.Sc. Chemistry",
     category: "Post Graduate",
-    focus: "Homogeneous catalysis and organometallic synthesis",
+    focus: "Deep Eutectic Solvent-Mediated Functionalization of Lignin Model Compound",
     year: "2025 – Present",
-    image: "",
+    image: "/teams/harsh.jpeg",
     orcid: "",
     scholar: "",
-    linkedin: "",
-    email: "student.pg@itbhu.ac.in"
+    linkedin: "https://www.linkedin.com/in/harsh-kanaujiya-725423395?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    email: "harshkanaujiya.chy25@itbhu.ac.in"
   },
   {
     name: "M.S. Anantha Sri Krishnan",
